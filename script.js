@@ -4,6 +4,9 @@ const allTopics = {
 january: {
 set1: [
 {q:"मौर्य साम्राज्य का संस्थापक कौन था?",options:["चंद्रगुप्त मौर्य","अशोक","हर्षवर्धन","समुद्रगुप्त"],answer:0,exp:"चंद्रगुप्त मौर्य"},
+{q:"अशोक किसके लिए प्रसिद्ध था?",options:["युद्ध","धर्म","व्यापार","कृषि"],answer:1,exp:"अशोक धम्म नीति के लिए प्रसिद्ध था"},
+{q:"नालंदा कहाँ था?",options:["बिहार","यूपी","MP","राजस्थान"],answer:0,exp:"नालंदा बिहार में था"},
+{q:"गुप्त काल को क्या कहा जाता है?",options:["स्वर्ण युग","लौह युग","आधुनिक युग","कांस्य युग"],answer:0,exp:"इसे स्वर्ण युग कहते हैं"},
 {q:"अशोक किसके लिए प्रसिद्ध था?",options:["युद्ध","धर्म","व्यापार","कृषि"],answer:1,exp:"धम्म नीति"}
 ],
 set2: [
@@ -171,6 +174,18 @@ let wrongQuestions = [];
 let timer;
 let time = 20;
 
+// ================= ANALYTICS =================
+let analytics = {
+    total: 0,
+    correct: 0,
+    wrong: 0,
+    negative: 0,
+    percentage: 0
+};
+
+// Negative marking rule
+let negativeMark = 0.25;
+
 /* ================= SAFE INIT ================= */
 function initApp(){
     if(!allTopics[currentTopic]){
@@ -179,7 +194,7 @@ function initApp(){
 
     currentSet = Object.keys(allTopics[currentTopic])[0];
 
-    questions = allTopics[currentTopic][currentSet] || [];
+    questions = shuffleArray(allTopics[currentTopic][set] || []);
 
     reset();
 }
@@ -195,7 +210,7 @@ return;
 currentTopic = topic;
 currentSet = Object.keys(allTopics[topic])[0];
 
-questions = allTopics[currentTopic][currentSet] || [];
+questions = shuffleArray(allTopics[currentTopic][currentSet] || []);
 
 index = 0;
 
@@ -399,11 +414,15 @@ wrongQuestions.push(q);
 
 });
 
+
 document.getElementById("quizBox").style.display = "none";
 document.getElementById("resultBox").style.display = "block";
 
+let percent = Math.round((score / questions.length) * 100);
+
 document.getElementById("scoreText").innerHTML =
 `<h3>Score: ${score}/${questions.length}</h3>
+<h3>Percentage: ${percent}%</h3>
 <button onclick="retryWrongQuestions()">
 🔄 Retry Wrong Questions (${wrongQuestions.length})
 </button>`;
@@ -415,11 +434,17 @@ questions.forEach((q,i)=>{
 
 let div = document.createElement("div");
 
+let userAnswer = selected[i];
+let isCorrect = userAnswer === q.answer;
+
+div.className = isCorrect ? "result-correct" : "result-wrong";
+
 div.innerHTML =
 "<b>Q:</b> " + q.q +
-"<br><b>Your:</b> " + (q.options[selected[i]] ?? "Not Attempted") +
-"<br><b>Correct:</b> " + q.options[q.answer] +
-"<br><b>Exp:</b> " + q.exp +
+"<br><b>Your Answer:</b> " +
+(userAnswer !== undefined ? q.options[userAnswer] : "<span style='color:gray'>Not Attempted</span>") +
+"<br><b>Correct Answer:</b> <span class='correct-answer'>" + q.options[q.answer] + "</span>" +
+"<br><b>Explanation:</b> " + q.exp +
 "<hr>";
 
 rev.appendChild(div);
@@ -454,21 +479,22 @@ render();
 startTimer();
 }
 
-/* ================= INIT ================= */
-loadTopic("january");
+/* ================= SAFE INIT ================= */
+function initApp() {
+    // अगर current topic मौजूद नहीं है तो पहला topic set करो
+    if (!allTopics[currentTopic]) {
+        currentTopic = Object.keys(allTopics)[0];
+    }
 
-function getAllSets(topic){
-return Object.keys(allTopics[topic]);
-}
+    // उस topic का पहला set auto select करो
+    currentSet = Object.keys(allTopics[currentTopic])[0];
 
-function getNextSetName() {
-let sets = Object.keys(allTopics[currentTopic]);
-let i = sets.indexOf(currentSet);
+    // ✔️ IMPORTANT FIX: "set" नहीं, currentSet use करना है
+    questions = shuffleArray(allTopics[currentTopic][currentSet] || []);
 
-if (i < sets.length - 1) {
-return sets[i + 1];
-}
-return null;
+    index = 0;
+
+    reset();
 }
 
 function updateActiveButtons(){
@@ -507,6 +533,13 @@ document.querySelectorAll(".set-btn").forEach(btn => {
         loadSet(set);
     });
 });
+
+function shuffleArray(arr){
+    return arr
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+}
 
 window.onload = () => {
     initApp();
