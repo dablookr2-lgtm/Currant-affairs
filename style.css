@@ -284,30 +284,90 @@ body{
     box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 
+
 /* ================= MOBILE ================= */
-@media screen and (max-width: 768px){
+@media screen and (max-width:768px){
 
 .app{
     flex-direction:column;
 }
 
+.header{
+    flex-direction:column;
+    text-align:center;
+}
+
+/* MONTH SCROLL */
+.topics{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    white-space:nowrap !important;
+    width:100% !important;
+    justify-content:flex-start !important;
+    -webkit-overflow-scrolling:touch;
+}
+
+.topic-btn{
+    flex:0 0 auto !important;
+}
+
+/* PROGRESS BAR */
+.progress{
+    top:145px !important;
+}
+
+/* SET SCROLL */
+.set-bar{
+    position:fixed !important;
+    top:151px !important;
+    left:0;
+    right:0;
+
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+
+    white-space:nowrap !important;
+    justify-content:flex-start !important;
+
+    background:#f5f5f5;
+    z-index:1001 !important;
+
+    scrollbar-width:none;
+}
+
+.set-bar::-webkit-scrollbar{
+    display:none;
+}
+
+.set-btn{
+    flex:0 0 auto !important;
+    min-width:90px;
+}
+
+/* QUESTION AREA */
 .main{
     flex:none;
     width:100%;
-    padding:130px 10px 10px;
+    padding:220px 10px 10px;
 }
 
+/* PALETTE */
 .sidebar{
     flex:none;
     width:100%;
     padding:10px;
     border-left:none;
     border-top:1px solid #ddd;
+
+    max-height:300px;
+    overflow-y:auto;
 }
 
-.header{
-    flex-direction:column;
-    text-align:center;
+#palette{
+    grid-template-columns:repeat(5,1fr);
 }
 
 #qText{
@@ -318,68 +378,16 @@ body{
     font-size:15px;
 }
 
-#palette{
-    grid-template-columns:repeat(5,1fr);
-}
+
 
 .active-btn{
-background:#ff9800;
-color:white;
-font-weight:bold;
-transform:scale(1.1);
-}
-
-/* ===== SET MOBILE SCROLL ===== */
-.set-bar{
-    display:flex !important;
-    flex-wrap:nowrap !important;
-    overflow-x:auto !important;
-    overflow-y:hidden !important;
-    white-space:nowrap !important;
-    justify-content:flex-start !important;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-}
-
-.set-bar::-webkit-scrollbar{
-    display:none;
-}
-
-.set-btn{
-    flex:0 0 auto !important;
-    min-width:80px;
-}
-
-/* Month Scroll */
-.topics{
-    display:block !important;
-    overflow-x:auto !important;
-    white-space:nowrap !important;
-    width:100% !important;
-}
-
-.topic-btn{
-    display:inline-block !important;
-}
-
-
-
-/* Set Horizontal Scroll */
-.set-bar{
-    flex-wrap:nowrap !important;
-    overflow-x:auto;
-    overflow-y:hidden;
-    white-space:nowrap;
-    justify-content:flex-start;
-    -webkit-overflow-scrolling:touch;
-}
-
-.set-btn{
-    flex:0 0 auto;
+    background:#ff9800;
+    color:white;
+    font-weight:bold;
+    transform:scale(1.1);
 }
 
 }
-
 .result-correct{
     background:#e8f5e9;
     border:2px solid #2e7d32;
