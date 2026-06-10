@@ -329,6 +329,27 @@ font-weight:bold;
 transform:scale(1.1);
 }
 
+/* ===== SET MOBILE SCROLL ===== */
+.set-bar{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    white-space:nowrap !important;
+    justify-content:flex-start !important;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+}
+
+.set-bar::-webkit-scrollbar{
+    display:none;
+}
+
+.set-btn{
+    flex:0 0 auto !important;
+    min-width:80px;
+}
+
 /* Month Scroll */
 .topics{
     display:block !important;
@@ -341,30 +362,7 @@ transform:scale(1.1);
     display:inline-block !important;
 }
 
-/* Set Scroll */
-.set-bar{
-    overflow-x:auto !important;
-    white-space:nowrap !important;
-    flex-wrap:nowrap !important;
-}
 
-.set-btn{
-    display:inline-block !important;
-}
-
-/* Month Horizontal Scroll */
-.topics{
-    flex-wrap:nowrap !important;
-    overflow-x:auto;
-    overflow-y:hidden;
-    white-space:nowrap;
-    justify-content:flex-start;
-    -webkit-overflow-scrolling:touch;
-}
-
-.topic-btn{
-    flex:0 0 auto;
-}
 
 /* Set Horizontal Scroll */
 .set-bar{
@@ -405,27 +403,5 @@ transform:scale(1.1);
     font-weight:bold;
 }
 
-/* MOBILE SET SCROLL */
-@media screen and (max-width:768px){
 
-.set-bar{
-    flex-wrap:nowrap !important;
-    overflow-x:auto;
-    overflow-y:hidden;
-    white-space:nowrap;
-    justify-content:flex-start;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-}
-
-.set-bar::-webkit-scrollbar{
-    display:none;
-}
-
-
-.set-btn{
-    flex:0 0 auto;
-}
-
-}
 
