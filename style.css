@@ -329,6 +329,29 @@ font-weight:bold;
 transform:scale(1.1);
 }
 
+/* Month Scroll */
+.topics{
+    display:block !important;
+    overflow-x:auto !important;
+    white-space:nowrap !important;
+    width:100% !important;
+}
+
+.topic-btn{
+    display:inline-block !important;
+}
+
+/* Set Scroll */
+.set-bar{
+    overflow-x:auto !important;
+    white-space:nowrap !important;
+    flex-wrap:nowrap !important;
+}
+
+.set-btn{
+    display:inline-block !important;
+}
+
 /* Month Horizontal Scroll */
 .topics{
     flex-wrap:nowrap !important;
