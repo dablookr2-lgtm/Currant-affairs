@@ -135,7 +135,7 @@ body{
     background:linear-gradient(135deg,#ffffff,#f1f8e9);
     padding:15px;
     border-radius:10px;
-    border-left:6px solid #1e88e5;
+    border-left:8px solid #1e88e5;
     box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
@@ -144,7 +144,7 @@ body{
     padding:12px;
     margin:10px 0;
     border-radius:10px;
-    border:2px solid #c5cae9;
+    border:3px solid #c5cae9;
     cursor:pointer;
     font-weight:bold;
     font-size:16px;
@@ -193,7 +193,7 @@ body{
     flex:1;
     background:white;
     padding:120px 10px 10px;
-    border-left:1px solid #ddd;
+    border-left:1px solid #fa0dee;
 }
 
 /* PALETTE GRID */
@@ -360,7 +360,7 @@ body{
     width:100%;
     padding:10px;
     border-left:none;
-    border-top:1px solid #ddd;
+    border-top:1px solid hsl(356, 92%, 51%);
 
     max-height:300px;
     overflow-y:auto;
