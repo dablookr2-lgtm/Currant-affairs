@@ -329,6 +329,34 @@ font-weight:bold;
 transform:scale(1.1);
 }
 
+/* Month Horizontal Scroll */
+.topics{
+    flex-wrap:nowrap !important;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    justify-content:flex-start;
+    -webkit-overflow-scrolling:touch;
+}
+
+.topic-btn{
+    flex:0 0 auto;
+}
+
+/* Set Horizontal Scroll */
+.set-bar{
+    flex-wrap:nowrap !important;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    justify-content:flex-start;
+    -webkit-overflow-scrolling:touch;
+}
+
+.set-btn{
+    flex:0 0 auto;
+}
+
 }
 
 .result-correct{
@@ -377,42 +405,3 @@ transform:scale(1.1);
 
 }
 
-@media screen and (max-width:768px){
-
-/* Month Scroll */
-.topics{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    overflow-y:hidden;
-    white-space:nowrap;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-}
-
-.topics::-webkit-scrollbar{
-    display:none;
-}
-
-.topic-btn{
-    flex:0 0 auto;
-}
-
-/* Set Scroll */
-.set-bar{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    overflow-y:hidden;
-    white-space:nowrap;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-}
-
-.set-bar::-webkit-scrollbar{
-    display:none;
-}
-
-.set-btn{
-    flex:0 0 auto;
-}
-
-}
