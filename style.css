@@ -353,3 +353,26 @@ transform:scale(1.1);
     color:green;
     font-weight:bold;
 }
+
+/* MOBILE SET SCROLL */
+@media screen and (max-width:768px){
+
+.set-bar{
+    flex-wrap:nowrap !important;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    justify-content:flex-start;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+}
+
+.set-bar::-webkit-scrollbar{
+    display:none;
+}
+
+.set-btn{
+    flex:0 0 auto;
+}
+
+}
