@@ -77,7 +77,7 @@ set1: [
 
 {q:"GSDP growth rate के संदर्भ में सही अनुमान चुनिए:",options:["~12%","~18%","~22%","~28%"],answer:2,exp:"GSDP growth का अनुमान लगभग 22% है"},
 
-{q:"निम्न में से कौन-सा statement सही है?",options:["केवल 1 और 3","केवल 1 और 2","केवल 2 और 3","सभी सही"],answer:0,exp:"Education सबसे बड़ा sector है और Rural development high priority है, लेकिन Health > Education नहीं है"},
+
 
 {q:"Interest payment के संदर्भ में कौन सा कथन सही है?",options:["यह negligible है (<2%)","यह लगभग 7% के आसपास है","यह 15% से अधिक है","यह शून्य है"],answer:1,exp:"Interest payments लगभग 7% के आसपास हैं"},
 
@@ -93,7 +93,7 @@ set1: [
 
 {q:"Bihar Budget 2025–26 में fiscal management के संदर्भ में कौन सा कथन सही है?",options:["Revenue deficit मौजूद है","Revenue surplus marginal positive है","Fiscal deficit 5% से अधिक है","Budget fully balanced (zero deficit) है"],answer:1,exp:"बजट में marginal revenue surplus (~0.8% GSDP) दिखता है"},
 
-{q:"निम्न में से कौन-सा statement सही है?",options:["केवल 1 और 2","केवल 2 और 3","केवल 1 और 3","सभी सही"],answer:0,exp:"Interest payment significant है और ~7% के आसपास है, लेकिन debt-free structure नहीं है"},
+
 
 {q:"Bihar Budget 2025–26 के growth model के संदर्भ में कौन सा सही है?",options:["Consumption-led growth","Agriculture-only growth","Balanced growth with infrastructure push","Import-driven growth"],answer:2,exp:"यह balanced growth model है जिसमें infrastructure push शामिल है"},
 
