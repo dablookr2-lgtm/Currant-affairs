@@ -383,6 +383,39 @@ let wrongQuestions = [];
 let timer;
 let time = 20;
 
+function saveProgress(){
+    localStorage.setItem("quizState", JSON.stringify({
+        currentTopic,
+        currentSet,
+        index,
+        selected,
+        marked,
+        time
+    }));
+}
+
+function loadProgress(){
+
+    const data = localStorage.getItem("quizState");
+
+    if(!data) return false;
+
+    const state = JSON.parse(data);
+
+    currentTopic = state.currentTopic || "january";
+    currentSet = state.currentSet || "set1";
+    index = state.index || 0;
+
+    selected = state.selected || {};
+    marked = state.marked || {};
+
+    time = state.time || 20;
+
+    questions = allTopics[currentTopic][currentSet] || [];
+
+    return true;
+}
+
 // ================= ANALYTICS =================
 let analytics = {
     total: 0,
@@ -499,6 +532,8 @@ delete selected[index];
 selected[index] = i;
 }
 
+saveProgress();
+
 load();
 render();
 
@@ -515,6 +550,9 @@ updateBar();
 function next(){
 if(index < questions.length - 1){
 index++;
+
+saveProgress();
+
 load();
 render();
 startTimer();
@@ -526,6 +564,9 @@ submitQuiz();
 function prev(){
 if(index > 0){
 index--;
+
+saveProgress();
+
 load();
 render();
 startTimer();
@@ -534,6 +575,9 @@ startTimer();
 
 function mark(){
 marked[index] = true;
+
+saveProgress();
+
 render();
 }
 
@@ -591,6 +635,7 @@ time = 20;
 timer = setInterval(()=>{
 
 time--;
+saveProgress();
 
 document.getElementById("timerText").innerText = "⏳ " + time;
 document.getElementById("timerBar").style.width = (time/20)*100 + "%";
@@ -620,6 +665,7 @@ resultStatus[i] = "correct";
 resultStatus[i] = "wrong";
 wrongQuestions.push(q);
 }
+localStorage.removeItem("quizState");
 
 });
 
@@ -751,7 +797,20 @@ function shuffleArray(arr){
 }
 
 window.onload = () => {
-    initApp();
+
+    if(loadProgress()){
+
+        load();
+        render();
+        startTimer();
+        updateActiveButtons();
+
+    }else{
+
+        initApp();
+
+    }
+
 };
 
 // TOPIC BUTTON CLICK
