@@ -155,6 +155,11 @@ set1: [
 
 {q:"Bihar Budget 2025–26 में “fiscal sustainability” किससे best indicated होती है?",options:["Increasing deficit beyond FRBM","Controlled deficit within limits","Zero expenditure policy","Debt elimination instant phase"],answer:1,exp:"Controlled deficit (FRBM limit के भीतर) fiscal sustainability दिखाता है"},
 
+
+
+],
+set2: [
+
 {q:"Bihar Budget के संदर्भ में “growth constraint” का सबसे संभावित कारण क्या माना जा सकता है?",options:["Excess industrialization","High dependency on central transfers","Excess export surplus","Low population density"],answer:1,exp:"High central dependency growth constraints का प्रमुख कारण माना जाता है"},
 
 {q:"निम्न में से कौन-सा Bihar Budget 2025–26 का सबसे सही macro characterization है?",options:["Crisis restructuring budget","Balanced developmental welfare budget","War economy budget","Export-only economy budget"],answer:1,exp:"यह budget balanced development + welfare approach दिखाता है"},
@@ -253,12 +258,12 @@ set1: [
 
 {q:"Bihar Budget 2025–26 में “development focus” का सबसे accurate interpretation क्या है?",options:["Consumption-driven policy","Human capital + infrastructure investment model","Defence-centric allocation","Crypto economy shift"],answer:1,exp:"Human capital + infrastructure investment development focus है"},
 
-{q:"यदि budget को “balanced development framework” कहा जाए, तो इसका core logic क्या होगा?",options:["Only welfare expansion","Integration of growth, welfare and fiscal prudence","Only industrial growth","Only agricultural focus"],answer:1,exp:"Balanced framework में growth, welfare और fiscal prudence शामिल होते हैं"}
+{q:"यदि budget को “balanced development framework” कहा जाए, तो इसका core logic क्या होगा?",options:["Only welfare expansion","Integration of growth, welfare and fiscal prudence","Only industrial growth","Only agricultural focus"],answer:1,exp:"Balanced framework में growth, welfare और fiscal prudence शामिल होते हैं"},
 
-],
-set2: [
-{q:"हिमालय कहाँ?",options:["उत्तर","दक्षिण","पूर्व","पश्चिम"],answer:0,exp:"उत्तर"},
-{q:"भारत दिवस?",options:["26 जनवरी","15 अगस्त","2 अक्टूबर","1 मई"],answer:0,exp:"26 जनवरी"}
+
+
+
+
 ],
 set3: [
 {q:"गंगा उद्गम?",options:["गंगोत्री","यमुना","सतलुज","नर्मदा"],answer:0,exp:"गंगोत्री"},
